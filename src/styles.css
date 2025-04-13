@@ -1,0 +1,14 @@
+@import "primeng/resources/themes/nano/theme.css";
+@import "primeng/resources/primeng.css";
+
+body {
+    background-color: var(--surface-c);
+}
+
+* {
+    font-family: 'Nunito Sans Variable', sans-serif;
+}
+
+.p-inline-message .p-inline-message-text {
+    font-size: 0.8em !important;
+}
