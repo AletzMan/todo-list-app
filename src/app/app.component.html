@@ -23,7 +23,7 @@
         <textarea formControlName="description" rows="5" cols="30" placeholder="Description task..." pInputTextarea
           (change)="onChange('description')"></textarea>
         @if (taskForm.get('description')?.invalid && taskForm.get('description')?.dirty &&
-        !taskForm.get('description')?.pristine) {
+        taskForm.get('description')?.pristine) {
         <p-message class="message" [text]="messageErrorDescription" severity="error"></p-message>
         }
       </label>
