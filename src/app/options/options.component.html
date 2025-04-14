@@ -7,7 +7,7 @@
     <i class="pi pi-list-check button-icon"></i>
     <span class="button-text">Task</span>
   </button>
-  <button class="button-add">
+  <button class="button-add" (click)="handlerViewModal()">
     <i class="pi pi-plus button-add-icon"></i>
   </button>
   <button class="button">
@@ -19,3 +19,6 @@
     <span class="button-text">Profile</span>
   </button>
 </footer>
+<p-dialog [modal]="true" [(visible)]="viewModal" header="New task">
+  <app-taskform></app-taskform>
+</p-dialog>
