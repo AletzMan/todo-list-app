@@ -32,12 +32,3 @@
     </div>
   </form>
 </p-card>
-@if (isValid) {
-<p-messages [(value)]="messageTask" (onClose)="onClose()" />
-}
-
-
-{{taskForm.get('task')?.errors | json}}
-{{taskForm.get('task')?.getError("minLength" ) | json}}
-{{taskForm.get('date')?.errors | json}}
-{{taskForm.get('description')?.errors | json}}

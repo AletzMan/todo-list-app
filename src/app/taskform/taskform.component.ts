@@ -9,7 +9,6 @@ import { Message } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -23,8 +22,7 @@ import { Component } from '@angular/core';
     CalendarModule,
     CardModule,
     MessageModule,
-    InputTextareaModule,
-    JsonPipe],
+    InputTextareaModule],
   templateUrl: './taskform.component.html',
   styleUrl: './taskform.component.scss'
 })
