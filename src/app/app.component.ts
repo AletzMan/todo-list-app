@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TaskformComponent } from './taskform/taskform.component';
 import { HeaderComponent } from './header/header.component';
 import { OptionsComponent } from './options/options.component';
 
@@ -9,7 +8,6 @@ import { OptionsComponent } from './options/options.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    TaskformComponent,
     HeaderComponent,
     OptionsComponent
   ],
