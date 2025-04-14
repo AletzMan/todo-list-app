@@ -1,8 +1,26 @@
 @import "primeng/resources/themes/nano/theme.css";
 @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+:root {
+    --border-radius-xs: 2px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-full: 9999px;
+
+    --padding-xs: 2px;
+    --padding-sm: 4px;
+    --padding-md: 6px;
+    --padding-lg: 8px;
+    --padding-xl: 16px;
+    --padding-2xl: 32px;
+}
 
 body {
     background-color: var(--surface-c);
+    padding: 0;
+    margin: 0;
 }
 
 * {
