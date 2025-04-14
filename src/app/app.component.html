@@ -1,46 +1,8 @@
 <main class="main">
-  <p-card>
-    <form class="form" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-      <div class="form_input">
-        <label class="label">
-          Name task
-          <input type="text" placeholder="Something name..." pInputText formControlName="task"
-            (change)="onChange('task')" />
-          @if (taskForm.get('task')?.invalid && taskForm.get('task')?.dirty && taskForm.get('task')?.touched) {
-          <p-message class="message" [text]="messageErrorTask" severity="error"></p-message>
-          }
-        </label>
-        <label class="label">
-          Expitation date
-          <p-calendar formControlName="date" placeholder="Select date" />
-          @if (taskForm.get('date')?.invalid && taskForm.get('date')?.dirty && taskForm.get('date')?.touched ) {
-          <p-message class="message" text="El campo es requerido" severity="error"></p-message>
-          }
-        </label>
-      </div>
-      <label class="label">
-        Task description
-        <textarea formControlName="description" rows="5" cols="30" placeholder="Description task..." pInputTextarea
-          (change)="onChange('description')"></textarea>
-        @if (taskForm.get('description')?.invalid && taskForm.get('description')?.dirty &&
-        taskForm.get('description')?.pristine) {
-        <p-message class="message" [text]="messageErrorDescription" severity="error"></p-message>
-        }
-      </label>
-      <div class="form_button">
-        <button label="Create task" pButton [disabled]="taskForm.invalid"></button>
-        <button label="Clean form" pButton severity="secondary" outlined (click)="onCleanForm()"></button>
-      </div>
-    </form>
-  </p-card>
-  @if (isValid) {
-  <p-messages [(value)]="messageTask" (onClose)="onClose()" />
-  }
+  <app-header></app-header>
+  <app-taskform></app-taskform>
+  <app-options></app-options>
 </main>
 
-{{taskForm.get('task')?.errors | json}}
-{{taskForm.get('task')?.getError("minLength" ) | json}}
-{{taskForm.get('date')?.errors | json}}
-{{taskForm.get('description')?.errors | json}}
 
 <router-outlet />
