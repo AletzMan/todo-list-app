@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em 1em;
+    background-color: var(--blue-900);
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.35em 0.5em;
+    border-radius: 0.25em;
+    background-color: var(--surface-b);
+    color: var(--blue-900);
+    font-weight: 800;
+
+    &-icon {
+        font-size: 1.5em;
+        stroke-width: 3;
+        font-weight: inherit;
+    }
+
+    &-name {
+        font-size: 1.2em;
+    }
+}
