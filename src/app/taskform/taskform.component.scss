@@ -1,0 +1,28 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    &_input {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 1em;
+        width: 100%;
+    }
+
+    &_button {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1em;
+    }
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gray-600);
+}
