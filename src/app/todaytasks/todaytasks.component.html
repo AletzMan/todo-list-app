@@ -1,41 +1,5 @@
 <section class="container">
   @for (task of tasks; track $index) {
-  <div
-    [className]="taskType === 'Overdue' ? 'task-overdue task': taskType === 'Upcoming' ? 'task-upcoming task' :  'task-completed task' ">
-    <header class="header">
-      <span class="header-name">{{ task.name }}</span>
-      <i [class]="taskIcon" class="header-icon"></i>
-    </header>
-    <section class="body">
-      <div class="subtasks">
-        @for (subtask of task.sub_tasks; track $index) {
-        <div class="subtask">
-          <p-checkbox [value]="subtask" [label]="subtask" />
-        </div>
-        }
-      </div>
-      <div class="info">
-        <span class="info-title">Pogress</span>
-        <div class="numbertasks">
-          <span class="numbertasks-completed">{{task.completed_tasks}}</span>
-          /
-          <span class="numbertasks-total">{{task.total_tasks}}</span>
-        </div>
-      </div>
-      <p-progressBar [value]="(100 / task.total_tasks) * task.completed_tasks"
-        [className]="taskType === 'Overdue' ? 'progressbar-overdue progressbar': taskType === 'Upcoming' ? 'progressbar-upcoming progressbar' :  'progressbar-completed progressbar' ">
-      </p-progressBar>
-    </section>
-    <footer class="footer">
-      <div class="footer-date">
-        <i class="footer-date-icon pi pi-calendar"></i>
-        <span class="task-date">{{task.date}}</span>
-      </div>
-      <div class="category">
-        <i class="category-icon" [className]="cetegories[task.category].icon"></i>
-        <span class="category-name">{{task.category}}</span>
-      </div>
-    </footer>
-  </div>
+  <app-taskview [task]="task" [taskType]="taskType"></app-taskview>
   }
 </section>
