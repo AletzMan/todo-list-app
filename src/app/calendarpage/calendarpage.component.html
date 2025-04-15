@@ -4,8 +4,8 @@
       (onSelect)="onSelectDate()"></p-calendar>
   </form>
   <div class="tasks">
-    @for (task of tasks; track $index) {
-    <app-taskview [task]="task" />
+    @for (task of filterTasks; track $index) {
+    <app-taskview [task]="task" [taskType]="task.status" />
     }
   </div>
 </section>

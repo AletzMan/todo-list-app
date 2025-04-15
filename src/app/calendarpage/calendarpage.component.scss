@@ -2,14 +2,19 @@
     display: flex;
     flex-direction: column;
     height: calc(100svh - 7em);
-    overflow-y: auto;
-
+    overflow-y: hidden;
 }
 
 .calendar {
     max-width: 100%;
+    z-index: 2;
 }
 
 .tasks {
-    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 0.5em;
+    overflow-y: auto;
+    max-height: calc(100svh - 20em);
 }
