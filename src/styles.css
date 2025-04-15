@@ -15,6 +15,35 @@
     --padding-lg: 8px;
     --padding-xl: 16px;
     --padding-2xl: 32px;
+
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+
+    --danger-900: #590000;
+    --danger-700: #a41414;
+    --danger-500: #eb3b3b;
+    --danger-400: #f08888;
+    --danger-300: #dfa1a1;
+    --danger-200: #f8dcdc;
+    --danger-100: #fef2f2;
+
+    --success-900: #005919;
+    --success-700: #056f18;
+    --success-500: #56e364;
+    --success-400: #76ee84;
+    --success-300: #8de197;
+    --success-200: #dbf8de;
+    --success-100: #f2fef3;
+
+    --info-900: #003859;
+    --info-700: #1460a2;
+    --info-500: #2d9bef;
+    --info-400: #79b9f4;
+    --info-300: #9ac4eb;
+    --info-200: #d9f4f9;
+    --info-100: #f2fcfe;
 }
 
 body {
@@ -25,8 +54,75 @@ body {
 
 * {
     font-family: 'Nunito Sans Variable', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: var(--indigo-400) var(--indigo-100);
 }
 
 .p-inline-message .p-inline-message-text {
     font-size: 0.8em !important;
+}
+
+.p-menuitem-link,
+.p-tabmenuitem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.p-progressbar {
+    height: 0.5em;
+    border-radius: var(--border-radius-xs);
+}
+
+.progressbar {
+
+    &.progressbar-overdue {
+        .p-progressbar-value {
+            background-color: var(--danger-500);
+        }
+    }
+
+    &.progressbar-upcoming {
+        .p-progressbar-value {
+            background-color: var(--info-500);
+        }
+    }
+
+    &.progressbar-completed {
+        .p-progressbar-value {
+            background-color: var(--success-500);
+        }
+    }
+}
+
+.p-progressbar-label {
+    display: none;
+}
+
+.p-checkbox {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.p-checkbox-box {
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: var(--border-radius-xs);
+
+    &.p-checkbox-box.p-highlight {
+        background-color: var(--indigo-400);
+        border-color: var(--indigo-400);
+    }
+}
+
+.p-checkbox-icon {
+    stroke-width: 1px;
+    stroke: var(--surface-a);
+}
+
+.p-checkbox-label {
+    color: var(--gray-400);
+    font-size: var(--font-size-md);
 }
