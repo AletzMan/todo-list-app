@@ -1,1 +1,11 @@
-<p>calendarpage works!</p>
+<section class="section">
+  <form [formGroup]="formGroup">
+    <p-calendar class="calendar" [inline]="true" [showButtonBar]="true" formControlName="date"
+      (onSelect)="onSelectDate()"></p-calendar>
+  </form>
+  <div class="tasks">
+    @for (task of tasks; track $index) {
+    <app-taskview [task]="task" />
+    }
+  </div>
+</section>

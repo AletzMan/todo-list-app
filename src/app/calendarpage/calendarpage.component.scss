@@ -1,0 +1,15 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    height: calc(100svh - 7em);
+    overflow-y: auto;
+
+}
+
+.calendar {
+    max-width: 100%;
+}
+
+.tasks {
+    height: 100svh;
+}
