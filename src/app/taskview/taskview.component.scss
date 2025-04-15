@@ -9,6 +9,7 @@
     border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
     background-color: var(--surface-a);
     min-height: max-content;
+    max-height: max-content;
     height: 100%;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
