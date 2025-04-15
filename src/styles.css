@@ -73,7 +73,7 @@ body {
 
 .p-progressbar {
     height: 0.5em;
-    border-radius: var(--border-radius-xs);
+    border-radius: var(--border-radius-sm);
 }
 
 .progressbar {
