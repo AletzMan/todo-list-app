@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Categories } from '../../constants';
+import { Categories } from '../../utils/constants';
 import { CheckboxModule } from 'primeng/checkbox';
 import { Task } from '../todaytasks/todaytasks.component';
 import { ProgressBarModule } from 'primeng/progressbar';
