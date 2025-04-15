@@ -1,6 +1,7 @@
 .header {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 0.5em 1em;
     background-color: var(--indigo-900);
 }
@@ -25,5 +26,24 @@
 
     &-name {
         font-size: 1.2em;
+    }
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0.5em;
+    background-color: var();
+
+    &-name {
+        color: var(--surface-b);
+    }
+
+    &-avatar {
+        width: 2em;
+        height: 2em;
+        border-radius: var(--border-radius-full);
     }
 }
