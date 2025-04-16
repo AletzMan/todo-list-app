@@ -2,33 +2,87 @@ import { Task } from "../app/todaytasks/todaytasks.component";
 
 export const Categories = {
     work: {
-        icon: "pi pi-briefcase"
+        icon: "pi pi-briefcase",
+        name: "Work",
+        id: 0
     },
     sport: {
-        icon: "pi pi-heart"
+        icon: "pi pi-heart",
+        name: "Sport",
+        id: 1
     },
     study: {
-        icon: "pi pi-graduation-cap"
+        icon: "pi pi-graduation-cap",
+        name: "Study",
+        id: 2
     },
     social: {
-        icon: "pi pi-megaphone"
+        icon: "pi pi-megaphone",
+        name: "Social",
+        id: 3
     },
     home: {
-        icon: "pi pi-home"
+        icon: "pi pi-home",
+        name: "Home",
+        id: 4
     },
     shopping: {
-        icon: "pi pi-shopping-bag"
+        icon: "pi pi-shopping-bag",
+        name: "Shopping",
+        id: 5
     },
     travel: {
-        icon: "pi pi-car"
+        icon: "pi pi-car",
+        name: "Travel",
+        id: 6
     },
     movie: {
-        icon: "pi pi-video"
+        icon: "pi pi-video",
+        name: "Movie",
+        id: 7
     },
     music: {
-        icon: "pi pi-headphones"
+        icon: "pi pi-headphones",
+        name: "Music",
+        id: 8
     },
 }
+
+export const CategoriesArray = [
+    { icon: 'pi pi-briefcase', name: 'Show all', id: 0, key: 'all' },
+    { icon: 'pi pi-briefcase', name: 'Work', id: 0, key: 'work' },
+    { icon: 'pi pi-heart', name: 'Sport', id: 1, key: 'sport' },
+    { icon: 'pi pi-graduation-cap', name: 'Study', id: 2, key: 'study' },
+    { icon: 'pi pi-megaphone', name: 'Social', id: 3, key: 'social' },
+    { icon: 'pi pi-home', name: 'Home', id: 4, key: 'home' },
+    { icon: 'pi pi-shopping-bag', name: 'Shopping', id: 5, key: 'shopping' },
+    { icon: 'pi pi-car', name: 'Travel', id: 6, key: 'travel' },
+    { icon: 'pi pi-video', name: 'Movie', id: 7, key: 'movie' },
+    { icon: 'pi pi-headphones', name: 'Music', id: 8, key: 'music' }
+]
+
+export const StatusArray = [
+    {
+        key: 'all',
+        name: 'Show all',
+        icon: 'pi pi-exclamation-circle'
+    },
+    {
+        key: 'overdue',
+        name: 'Overdue',
+        icon: 'pi pi-exclamation-circle'
+    },
+    {
+        key: 'upcoming',
+        name: 'Upcoming',
+        icon: 'pi pi-clock'
+    },
+    {
+        key: 'completed',
+        name: 'Completed',
+        icon: 'pi pi-check-circle'
+    }
+];
 
 export const TasksArray: Task[] = [
     // Work

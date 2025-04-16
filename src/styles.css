@@ -131,3 +131,13 @@ body {
 .p-calendar {
     width: 100%;
 }
+
+.p-dropdown {
+    width: 100%;
+}
+
+
+.p-card-content,
+.p-card-body {
+    padding: 0.25em;
+}
