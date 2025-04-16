@@ -1,23 +1,23 @@
 <footer class="options">
-  <button class="button">
+  <a class="button" href="/" [className]="currentPath === '/' ? 'button button-active' : 'button'">
     <i class="pi pi-clock button-icon"></i>
     <span class="button-text">Today</span>
-  </button>
-  <button class="button">
+  </a>
+  <a href="/calendar" [className]="currentPath === '/calendar' ? 'button button-active' : 'button'">
     <i class="pi pi-calendar button-icon"></i>
     <span class="button-text">Calendar</span>
-  </button>
+  </a>
   <button class="button-add" (click)="handlerViewModal()">
     <i class="pi pi-plus button-add-icon"></i>
   </button>
-  <button class="button">
+  <a class="button" href="/search" [className]="currentPath === '/search' ? 'button button-active' : 'button'">
     <i class="pi pi-search button-icon"></i>
     <span class="button-text">Search</span>
-  </button>
-  <button class="button">
+  </a>
+  <a class="button" href="/profile" [className]="currentPath === '/profile' ? 'button button-active' : 'button'">
     <i class="pi pi-user button-icon"></i>
     <span class="button-text">Profile</span>
-  </button>
+  </a>
 </footer>
 <p-dialog class="dialog" [modal]="true" [(visible)]="viewModal" header="New task">
   <app-taskform></app-taskform>

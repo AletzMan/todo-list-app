@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TaskformComponent } from '../taskform/taskform.component';
 import { DialogModule } from 'primeng/dialog';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,10 @@ import { DialogModule } from 'primeng/dialog';
 })
 export class OptionsComponent {
   viewModal = false
+  currentPath = location.pathname;
+
   handlerViewModal() {
     this.viewModal = true;
+    console.log(this.currentPath)
   }
 }

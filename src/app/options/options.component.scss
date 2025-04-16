@@ -21,15 +21,16 @@
     border: none;
     background-color: transparent;
     transition: all 0.3s ease-in-out;
-
+    text-decoration: none;
 
     &-icon {
-        font-size: 1.35em;
+        font-size: 1.2em;
         font-weight: 400;
     }
 
     &-text {
         font-weight: 400;
+        font-size: 0.8em;
     }
 
     &:hover {
@@ -55,6 +56,19 @@
 
         &:hover {
             background-color: var(--indigo-500);
+        }
+    }
+
+    &-active {
+        background-color: var(--indigo-100);
+        color: var(--indigo-600);
+
+        & .button-text {
+            font-weight: 800;
+        }
+
+        & .button-icon {
+            font-weight: 600;
         }
     }
 }
