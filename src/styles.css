@@ -1,5 +1,5 @@
-@import "primeng/resources/themes/nano/theme.css";
 @import "primeng/resources/themes/nova-alt/theme.css";
+@import "primeng/resources/themes/nano/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
@@ -140,4 +140,9 @@ body {
 .p-card-content,
 .p-card-body {
     padding: 0.25em;
+    background-color: var(--surface-b);
+}
+
+.p-card-body {
+    border: 1px solid var(--gray-300);
 }
