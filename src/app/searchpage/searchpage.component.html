@@ -10,10 +10,10 @@
       </p-inputGroup>
       <div class="filters">
         <p-dropdown [options]="categories" formControlName="currentCategory" optionLabel="name" [showClear]="true"
-          (onChange)="onChangeCategory()" placeholder="Select category">
+          (onChange)="onChangeCategory()" placeholder="Category">
         </p-dropdown>
         <p-dropdown [options]="status" formControlName="currentStatus" optionLabel="name" [showClear]="true"
-          (onChange)="onChangeStatus()" placeholder="Select status">
+          (onChange)="onChangeStatus()" placeholder="Status">
         </p-dropdown>
       </div>
       <div class="results">
