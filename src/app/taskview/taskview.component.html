@@ -11,8 +11,8 @@
       <div class="subtask">
         <label class="subtask-name">
           <input class="subtask-input" type="checkbox" [defaultChecked]="task.completed_tasks[$index]"
-            (change)="onChangeTask($index)" />
-          {{subtask}}
+            [value]="subtask.id" (change)="onChangeTask($index)" />
+          {{subtask.label}}
         </label>
       </div>
       }
