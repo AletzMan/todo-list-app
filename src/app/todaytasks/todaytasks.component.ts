@@ -7,7 +7,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 
 export interface Task {
   name: string
-  sub_tasks: string[]
+  sub_tasks: { id: string; name: string; label: string }[]
   date: string
   category: Categories
   completed_tasks: boolean[]
