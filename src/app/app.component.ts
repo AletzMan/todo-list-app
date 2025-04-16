@@ -15,7 +15,6 @@ import { SearchpageComponent } from './searchpage/searchpage.component';
     OptionsComponent,
     /*TodaytasksComponent*/
     /*CalendarpageComponent*/
-    SearchpageComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
