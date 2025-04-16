@@ -5,12 +5,16 @@
         <p-inputGroupAddon>
           <i class="pi pi-search"></i>
         </p-inputGroupAddon>
-        <input pInputText type="search" formControlName="search" />
+        <input pInputText type="search" formControlName="search" placeholder="Search by title, description..." />
         <button pButton label="Search" (click)="onSearch()"></button>
       </p-inputGroup>
       <div class="filters">
-        <p-dropdown></p-dropdown>
-        <p-dropdown></p-dropdown>
+        <p-dropdown [options]="categories" formControlName="currentCategory" optionLabel="name" [showClear]="true"
+          (onChange)="onChangeCategory()" placeholder="Select category">
+        </p-dropdown>
+        <p-dropdown [options]="status" formControlName="currentStatus" optionLabel="name" [showClear]="true"
+          (onChange)="onChangeStatus()" placeholder="Select status">
+        </p-dropdown>
       </div>
       <div class="results">
         <span class="results-number">{{filterTasks.length}}</span>
