@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Categories } from '../../utils/constants';
 import { CheckboxModule } from 'primeng/checkbox';
 import { Task } from '../pages/todaytasks-page/todaytasks-page.component';
@@ -23,7 +23,7 @@ const taskTypeIcons: { [key: string]: string } = {
   templateUrl: './taskview.component.html',
   styleUrl: './taskview.component.scss'
 })
-export class TaskviewComponent implements OnInit {
+export class TaskviewComponent implements OnInit, OnChanges {
   @Input() taskType: 'Overdue' | 'Upcoming' | 'Completed' = "Overdue";
   @Input() task: Task | null = null
 
@@ -40,10 +40,18 @@ export class TaskviewComponent implements OnInit {
     };
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['task']) {
+      console.log(changes['task'].currentValue.sub_tasks)
+      this.completedTasks = {
+        number: this.task?.completed_tasks.filter(value => value === true).length || 0,
+        array: this.task?.completed_tasks || []
+      };
+    }
+  }
   onChangeTask(index: number) {
     this.completedTasks.array[index] = !this.completedTasks.array[index]
     this.completedTasks.number = this.completedTasks.array.filter(value => value === true).length || 0
-    console.log(this.completedTasks)
   }
 
   getIconForType(type: 'Overdue' | 'Upcoming' | 'Completed'): string {
