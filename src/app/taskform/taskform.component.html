@@ -10,6 +10,16 @@
         }
       </label>
       <label class="label">
+        Category
+        <p-dropdown [options]="categories" formControlName="currentCategory" optionLabel="name" [showClear]="true"
+          formControlName="category" placeholder="Select category">
+        </p-dropdown>
+        @if (taskForm.get('category')?.invalid && taskForm.get('category')?.dirty && taskForm.get('category')?.touched )
+        {
+        <p-message class="message" text="El campo es requerido" severity="error"></p-message>
+        }
+      </label>
+      <label class="label">
         Expiration date
         <p-calendar formControlName="date" placeholder="Select date" [touchUI]="isMobileDevice()" [minDate]="today" />
         @if (taskForm.get('date')?.invalid && taskForm.get('date')?.dirty && taskForm.get('date')?.touched ) {
@@ -27,8 +37,8 @@
       }
     </label>
     <div class="form_button">
-      <button label="Create task" pButton [disabled]="taskForm.invalid"></button>
-      <button label="Clean form" pButton severity="secondary" outlined (click)="onCleanForm()"></button>
+      <button label="Create task" type="button" pButton [disabled]="taskForm.invalid" (click)="onCreateTask()"></button>
+      <button label="Clean form" type="button" pButton severity="secondary" outlined (click)="onCleanForm()"></button>
     </div>
   </form>
 </p-card>

@@ -10,6 +10,10 @@ import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { Component, OnInit } from '@angular/core';
+import { CategoriesArray, TasksArray } from '../../utils/constants';
+import { DropdownModule } from 'primeng/dropdown';
+import { Task } from '../pages/todaytasks-page/todaytasks-page.component';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-taskform',
@@ -22,7 +26,8 @@ import { Component, OnInit } from '@angular/core';
     CalendarModule,
     CardModule,
     MessageModule,
-    InputTextareaModule],
+    InputTextareaModule,
+    DropdownModule],
   templateUrl: './taskform.component.html',
   styleUrl: './taskform.component.scss'
 })
@@ -33,13 +38,16 @@ export class TaskformComponent implements OnInit {
   messageErrorTask: string = "Field is required";
   messageErrorDescription: string = "Field is required";
   userAgent: string = navigator.userAgent || navigator.vendor || (window as any).opera || undefined
+  categories = CategoriesArray.filter(category => category.name !== "Show all");
 
   taskForm: FormGroup = new FormGroup({
     task: new FormControl('', [Validators.required, Validators.minLength(3)]),
     date: new FormControl('', [Validators.required]),
+    category: new FormControl('', Validators.required),
     description: new FormControl('', [Validators.required, Validators.minLength(20)]),
   });
   isValid: boolean = false;
+  pipe = new DatePipe('en-US')
 
   ngOnInit() {
     const response = this.isMobileDevice()
@@ -54,7 +62,6 @@ export class TaskformComponent implements OnInit {
       this.taskForm.reset();
     } else {
       this.isValid = false;
-      // Los mensajes de error se mostrarán automáticamente por p-messages si está vinculado a los errores del control
     }
   }
   onClose() {
@@ -63,7 +70,6 @@ export class TaskformComponent implements OnInit {
   }
 
   onChange(type: "task" | "description") {
-    console.log(type);
     const errors = this.taskForm.get(type)?.errors;
     if (errors) {
       if (type === "task") {
@@ -81,6 +87,25 @@ export class TaskformComponent implements OnInit {
         }
       }
     }
+  }
+
+  onCreateTask() {
+    let date = new Date(this.taskForm.controls['date'].value)
+    const format = this.pipe.transform(date, 'yyyy-MM-dd');
+    const newTask: Task = {
+      category: this.taskForm.controls['category'].value.key,
+      completed_tasks: [false],
+      date: format as string,
+      name: this.taskForm.controls['task'].value,
+      status: "Overdue",
+      sub_tasks: [{
+        id: 'wrok-1',
+        label: this.taskForm.controls['description'].value,
+        name: this.taskForm.controls['description'].value
+      }]
+    }
+
+    TasksArray.unshift(newTask);
   }
 
   onCleanForm() {
