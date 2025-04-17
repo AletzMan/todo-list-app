@@ -1,9 +1,13 @@
 .header {
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0.5em 1em;
     background-color: var(--indigo-900);
+    z-index: 10;
+    width: 100svw;
 }
 
 .logo {
