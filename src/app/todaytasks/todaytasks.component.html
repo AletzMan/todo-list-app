@@ -1,6 +1,8 @@
 <section class="container">
-  <p-tabMenu [model]="items" [(activeItem)]="items[0]" />
-  @for (task of tasks; track $index) {
-  <app-taskview [task]="task" [taskType]="selectedType"></app-taskview>
-  }
+  <p-tabMenu class="menu" [model]="items" [(activeItem)]="items[0]" />
+  <div class="tasks">
+    @for (task of tasks; track $index) {
+    <app-taskview [task]="task" [taskType]="selectedType"></app-taskview>
+    }
+  </div>
 </section>
