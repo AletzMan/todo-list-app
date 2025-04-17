@@ -1,0 +1,53 @@
+<section class="container">
+  <p-card>
+    <div class="data">
+      <div class="image">
+        <img class="image-photo" [src]="user.photo" />
+      </div>
+      <form class="user" [formGroup]="form">
+        @if (editName) {
+        <div>
+          <label class="label">Name</label>
+          <div class="input">
+            <input class="input-edit" pInputText autofocus formControlName="name" />
+            <button class="pi pi-times input-button" (click)="onEditName(false)"></button>
+            <button class="pi pi-save input-button input-button-save" (click)="onSaveData('name')"
+              [disabled]="form.controls['name'].invalid"></button>
+          </div>
+          @if ( form.controls['name'].invalid ) {
+          <p-message class="message" text="Campo requerido no puede quedar vacío" severity="error"></p-message>
+          }
+        </div>
+        } @else {
+        <div>
+          <label class="label">Name </label>
+          <span class="info user-name" #nameView (click)="onEditName(true)" #editNameInput>{{user.name}}</span>
+        </div>
+        }
+        @if (editLastName) {
+        <div>
+          <label class="label">Last Name</label>
+          <div class="input">
+            <input class="input-edit" pInputText autofocus formControlName="lastName" />
+            <button class=" pi pi-times input-button" (click)="onEditLastName(false)"></button>
+            <button class="pi pi-save input-button input-button-save" (click)="onSaveData( 'lastName')"
+              [disabled]="form.controls['lastName'].invalid"></button>
+          </div>
+          @if ( form.controls['lastName'].invalid ) {
+          <p-message class="message" text="Campo requerido no puede quedar vacío" severity="error"></p-message>
+          }
+        </div>
+        } @else {
+        <div>
+          <label class="label">Last Name</label>
+          <span class="info user-lastname" (click)="onEditLastName(true)">{{user.lastName}}</span>
+        </div>
+        }
+        <div>
+          <label class="label">E-mail</label>
+          <span class="info user-email">{{user.email}}</span>
+        </div>
+      </form>
+    </div>
+  </p-card>
+</section>
