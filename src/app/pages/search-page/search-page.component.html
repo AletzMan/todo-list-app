@@ -1,0 +1,30 @@
+<section class="section">
+  <p-card>
+    <form class="form" [formGroup]="formSearch">
+      <p-inputGroup>
+        <p-inputGroupAddon>
+          <i class="pi pi-search"></i>
+        </p-inputGroupAddon>
+        <input pInputText type="search" formControlName="search" placeholder="Search by title, description..." />
+        <button pButton label="Search" (click)="onSearch()"></button>
+      </p-inputGroup>
+      <div class="filters">
+        <p-dropdown [options]="categories" formControlName="currentCategory" optionLabel="name" [showClear]="true"
+          (onChange)="onChangeCategory()" placeholder="Category">
+        </p-dropdown>
+        <p-dropdown [options]="status" formControlName="currentStatus" optionLabel="name" [showClear]="true"
+          (onChange)="onChangeStatus()" placeholder="Status">
+        </p-dropdown>
+      </div>
+      <div class="results">
+        <span class="results-number">{{filterTasks.length}}</span>
+        <span class="results-text">tasks found</span>
+      </div>
+    </form>
+  </p-card>
+  <div class="tasks">
+    @for (task of filterTasks; track $index) {
+    <app-taskview [task]="task" [taskType]="task.status" />
+    }
+  </div>
+</section>

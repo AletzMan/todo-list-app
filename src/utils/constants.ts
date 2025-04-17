@@ -1,4 +1,4 @@
-import { Task } from "../app/todaytasks/todaytasks.component";
+import { Task } from "../app/pages/todaytasks-page/todaytasks-page.component";
 
 export const Categories = {
     work: {

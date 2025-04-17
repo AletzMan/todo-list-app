@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Categories } from '../../utils/constants';
 import { CheckboxModule } from 'primeng/checkbox';
-import { Task } from '../todaytasks/todaytasks.component';
+import { Task } from '../pages/todaytasks-page/todaytasks-page.component';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
