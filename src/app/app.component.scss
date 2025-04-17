@@ -1,5 +1,8 @@
 .main {
+    max-width: 980px;
     height: calc(100svh - 7.25em);
-    margin: 3.25em 0 4em 0;
+    margin: 3.25em auto 4em auto;
     overflow: hidden;
+    border: 1px solid var(--gray-200);
+    background-color: var(--surface-f);
 }
