@@ -5,6 +5,7 @@
     grid-template-columns: repeat(5, 1fr);
     place-items: center;
     width: 100%;
+    max-width: 980px;
     border-top: 1px solid var(--gray-200);
     background-color: var(--surface-b);
 }
