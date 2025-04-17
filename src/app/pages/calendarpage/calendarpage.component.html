@@ -1,0 +1,11 @@
+<section class="section">
+  <form [formGroup]="formGroup">
+    <p-calendar class="calendar" [inline]="true" [showButtonBar]="true" formControlName="date"
+      (onSelect)="onSelectDate()"></p-calendar>
+  </form>
+  <div class="tasks">
+    @for (task of filterTasks; track $index) {
+    <app-taskview [task]="task" [taskType]="task.status" />
+    }
+  </div>
+</section>
