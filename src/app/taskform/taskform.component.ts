@@ -9,7 +9,7 @@ import { Message } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-taskform',
@@ -26,10 +26,13 @@ import { Component } from '@angular/core';
   templateUrl: './taskform.component.html',
   styleUrl: './taskform.component.scss'
 })
-export class TaskformComponent {
+export class TaskformComponent implements OnInit {
+
+  today = new Date();
   messageTask: Message[] = [];
   messageErrorTask: string = "Field is required";
   messageErrorDescription: string = "Field is required";
+  userAgent: string = navigator.userAgent || navigator.vendor || (window as any).opera || undefined
 
   taskForm: FormGroup = new FormGroup({
     task: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -37,6 +40,11 @@ export class TaskformComponent {
     description: new FormControl('', [Validators.required, Validators.minLength(20)]),
   });
   isValid: boolean = false;
+
+  ngOnInit() {
+    const response = this.isMobileDevice()
+    console.log(response)
+  }
 
   onSubmit() {
     if (this.taskForm.valid) {
@@ -80,5 +88,10 @@ export class TaskformComponent {
     this.isValid = false;
     this.messageTask = [];
     this.messageErrorTask = "Field is required";
+  }
+
+  isMobileDevice = (): boolean => {
+    const regexs = [/(Android)(.+)(Mobile)/i, /BlackBerry/i, /iPhone|iPod/i, /Opera Mini/i, /IEMobile/i]
+    return regexs.some((b) => this.userAgent.match(b))
   }
 }

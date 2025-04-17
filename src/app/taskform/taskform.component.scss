@@ -1,17 +1,24 @@
 .form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    max-width: 85svw;
+    width: 80svw;
+    max-width: 500px;
+    min-height: 55svh;
+    height: 80svh;
 
     &_input {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 1em;
         width: 100%;
     }
 
     &_button {
+        position: fixed;
+        bottom: 1.5em;
+        right: 1.25em;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;

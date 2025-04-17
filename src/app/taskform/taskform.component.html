@@ -10,8 +10,8 @@
         }
       </label>
       <label class="label">
-        Expitation date
-        <p-calendar formControlName="date" placeholder="Select date" />
+        Expiration date
+        <p-calendar formControlName="date" placeholder="Select date" [touchUI]="isMobileDevice()" [minDate]="today" />
         @if (taskForm.get('date')?.invalid && taskForm.get('date')?.dirty && taskForm.get('date')?.touched ) {
         <p-message class="message" text="El campo es requerido" severity="error"></p-message>
         }
