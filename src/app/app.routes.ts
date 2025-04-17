@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { TodaytasksComponent } from './todaytasks/todaytasks.component';
-import { CalendarpageComponent } from './calendarpage/calendarpage.component';
-import { SearchpageComponent } from './searchpage/searchpage.component';
+import { CalendarpageComponent } from './pages/calendarpage/calendarpage.component';
+import { SearchpageComponent } from './pages/searchpage/searchpage.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 export const routes: Routes = [
     {
@@ -15,5 +16,9 @@ export const routes: Routes = [
     {
         path: "search",
         component: SearchpageComponent
+    },
+    {
+        path: 'profile',
+        component: ProfilePageComponent
     }
 ];
